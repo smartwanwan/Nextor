@@ -25,6 +25,11 @@ nextor2.rom
 info/*.pdf
 source/msxdos25/bank*/*.inc
 source/msxdos25/drivers/*.inc
+source/msxdos25/drivers/**/*.inc
+source/msxdos25/drivers/**/*.lst
+!source/msxdos25/drivers/MegaFlashRomSD/*.bin
+source/msxdos25/drivers/**/*.rom
+source/msxdos25/drivers/**/*.ROM
 source/msxdos25/bank5/*.dat
 source/msxdos25/bank5/*.asm
 source/command25/msxdos/*.inc
@@ -41,5 +46,3 @@ source/tools/data.mac
 *.suo
 NEXTOR.SYS
 NEXTORK.SYS
-
-
