@@ -58,7 +58,6 @@ int remote_CreatePartition(byte* callerParameters);
 int CreatePartition(int index);
 int remote_ToggleStatusBit(byte* callerParameters);
 int ToggleStatusBit(byte partitionTableEntryIndex, ulong partitonTablesector);
-void putchar(char ch);
 void Locate(byte x, byte y);
 
 //BC = function number (defined in fdisk.h), HL = address of parameters block
@@ -574,20 +573,6 @@ int ToggleStatusBit(byte partitionTableEntryIndex, ulong partitonTablesector)
 
     return WriteSectorToDevice(driverSlot, deviceIndex, selectedLunIndex, partitonTablesector);
 }
-
-void putchar(char ch) __naked
-{
-    __asm
-    push    ix
-    ld      ix,#4
-    add     ix,sp
-    ld  a,(ix)
-    call CHPUT
-    pop ix
-    ret
-    __endasm;
-}
-
 
 void Locate(byte x, byte y)
 {
